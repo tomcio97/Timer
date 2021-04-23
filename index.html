@@ -17,39 +17,39 @@
 
        <article class="timer__clock">
            <section class="clock">
-            <input type="number" name="hours" id="hours" value="00" min="0" max="99" class="clock__input"/>
+            <input type="number" name="hours" id="hours" value="00" min="0" max="99" class="clock__input" data-input/>
              <label for="hours" class="clock__label">Hours</label>
            </section>
            <section class="clock">
-            <input type="number" name="minutes" id="minutes" value="00" min="0" max="59" class="clock__input"/>
+            <input type="number" name="minutes" id="minutes" value="00" min="0" max="59" class="clock__input" data-input/>
             <label for="minutes" class="clock__label">Minutes</label>
         </section>
         <section class="clock">
-            <input type="number" name="seconds" id="seconds" value="00" min="0" max="59" class="clock__input"/>
+            <input type="number" name="seconds" id="seconds" value="00" min="0" max="59" class="clock__input" data-input/>
             <label for="seconds" class="clock__label">Seconds</label>
         </section>
        </article>
        <article class="timer__buttons">
            <button class="button" data-edit>
                <svg class="button__icon">
-                <use xlink:href="./assets/icons/sprite.svg#edit_black_24dp"></use>
+                <use xlink:href="./assets/icons/sprite.svg#done_black_24dp"></use>
                </svg>
            </button>
 
         </button>
-        <button class="button" data-run>
+        <button class="button" data-run disabled>
             <svg class="button__icon">
                 <use xlink:href="./assets/icons/sprite.svg#play_arrow_black_24dp"></use>
             </svg>
         </button>
-        <button class="button" data-return>
+        <button class="button" data-rerun>
             <svg class="button__icon">
                 <use xlink:href="./assets/icons/sprite.svg#refresh_black_24dp"></use>
             </svg>
         </button>
         <section class="timer__audio">
             <audio src="assets/sounds/Mechanical Clock Ring.mp3" data-audio loop></audio>
-            <button class="button hide">
+            <button class="button hide" data-alarm>
                 <svg class="button__icon button__icon--alarm">
                     <use xlink:href="./assets/icons/sprite.svg#timer_black_24dp"></use>
                 </svg>
@@ -58,5 +58,10 @@
        </article>
    </main> 
     
+   <script src="./js/index.js"></script>
+   <script>
+       const timer = new Timer();
+       timer.initializeTimer();
+   </script>
 </body>
 </html>
